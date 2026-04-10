@@ -1,0 +1,21 @@
+carrier_name,total_flights,delayed_flights,delay_rate_%
+GoJet Airlines LLC d/b/a United Express,7097.0,2880.0,40.58
+JetBlue Airways,20560.0,7210.0,35.07
+PSA Airlines Inc.,20497.0,7036.0,34.33
+Endeavor Air Inc.,20657.0,6977.0,33.78
+Spirit Airlines,11800.0,3821.0,32.38
+Allegiant Air,11516.0,3523.0,30.59
+Frontier Airlines,16724.0,5094.0,30.46
+Republic Airline,30225.0,8976.0,29.7
+Hawaiian Airlines Network,6705.0,1861.0,27.76
+Alaska Airlines Network,21102.0,5802.0,27.5
+SkyWest Airlines Inc.,68816.0,18201.0,26.45
+American Airlines Network,79859.0,20932.0,26.21
+Delta Air Lines Network,85139.0,21090.0,24.77
+Southwest Airlines,118075.0,28845.0,24.43
+Envoy Air,25437.0,5848.0,22.99
+Horizon Air,8768.0,1997.0,22.78
+United Air Lines Network,65865.0,14893.0,22.61
+CommuteAir LLC dba CommuteAir,6898.0,1515.0,21.96
+Piedmont Airlines,12878.0,2603.0,20.21
+Mesa Airlines Inc.,6369.0,1029.0,16.16
