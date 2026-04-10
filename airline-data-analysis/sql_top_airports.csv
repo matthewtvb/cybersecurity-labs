@@ -1,0 +1,11 @@
+airport_name,total_flights,total_delayed,delay_rate_pct
+"Chicago, IL: Chicago O'Hare International",29862.0,9964.0,33.37
+"Denver, CO: Denver International",26007.0,6353.0,24.43
+"Atlanta, GA: Hartsfield-Jackson Atlanta International",29073.0,6166.0,21.21
+"Dallas/Fort Worth, TX: Dallas/Fort Worth International",25797.0,5926.0,22.97
+"New York, NY: LaGuardia",13475.0,4494.0,33.35
+"Charlotte, NC: Charlotte Douglas International",19545.0,4274.0,21.87
+"Seattle, WA: Seattle/Tacoma International",14562.0,4216.0,28.95
+"Orlando, FL: Orlando International",14281.0,4057.0,28.41
+"Los Angeles, CA: Los Angeles International",16637.0,3919.0,23.56
+"Phoenix, AZ: Phoenix Sky Harbor International",17792.0,3740.0,21.02
