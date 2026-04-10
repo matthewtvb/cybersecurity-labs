@@ -1,29 +1,41 @@
 # U.S. Airline Delay Analysis
 
 ## Overview
-Analyzes U.S. airline on-time performance data from the Bureau of Transportation Statistics (BTS)
-to identify delay trends by airline, cause, and month.
+Analyzes U.S. airline on-time performance data from the Bureau of Transportation Statistics (BTS) to identify delay trends by airline, cause, and airport using a full data pipeline: cleaning, SQL querying, and visualization.
 
 ## Dataset
 Source: https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp  
-Download the CSV and place it in the same folder as the script, named: airline_delay_data.csv
+Download the CSV, place it in the same folder as the scripts, and name it: airline_delay_data.csv
 
-## What the script does
-1. Loads and cleans 1,800+ records of flight delay data
-2. Calculates delay rates by airline
-3. Breaks down delay causes (carrier, weather, national air system)
-4. Identifies which months have the worst delays
-5. Exports results to CSV for further analysis in Excel or Tableau
+## Project Structure
+| File | Description |
+|------|-------------|
+| airline_delay_analysis.py | Loads, cleans, and analyzes the raw CSV using pandas |
+| load_to_sql.py | Loads cleaned data into a SQLite database |
+| sql_queries.py | Runs SQL queries and exports results to CSV |
+| visualizations.py | Generates bar chart of delay rates by airline |
+| chart_delay_by_airline.png | Output chart |
+
+## What the pipeline does
+1. Cleans 1,800+ records, handles missing values and type mismatches
+2. Loads data into SQLite and queries it using SQL
+3. Aggregates delays by airline, cause, and airport
+4. Visualizes results as a chart
 
 ## Key Findings (December 2025)
-1. GoJet Airlines had the highest delay rate at 40.6%
-2. Airline-caused delays accounted for 56% of all delay minutes
-3. Weather was responsible for only 11% of delays
+- GoJet Airlines had the highest delay rate at 40.6%
+- Late aircraft was the #1 delay cause at 43% of total delay minutes
+- Carrier-caused delays accounted for 33% of total delay minutes
+- Weather was responsible for only 6.5% of delays
 
 ## How to run
-1. Install pandas: pip install pandas
-2. Place airline_delay_data.csv in the same folder as the script
-3. Run: python airline_delay_analysis.py
+1. pip install pandas matplotlib
+2. Place airline_delay_data.csv in the same folder
+3. Run in order:
+   - python airline_delay_analysis.py
+   - python load_to_sql.py
+   - python sql_queries.py
+   - python visualizations.py
 
 ## Tools Used
-Python, pandas
+Python, pandas, SQLite, SQL, matplotlib, Excel
