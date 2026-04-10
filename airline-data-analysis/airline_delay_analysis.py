@@ -1,3 +1,4 @@
+# Matthew Tran 
 # airline_delay_analysis.py
 # Analyzes U.S. airline on-time performance data from the Bureau of Transportation Statistics (BTS)
 # Dataset: https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp
@@ -5,10 +6,7 @@
 
 import pandas as pd
 
-# -------------------------------------------------------
 # STEP 1: LOAD THE DATA
-# -------------------------------------------------------
-
 # Read the CSV file into a DataFrame (think of it like loading a spreadsheet into Python)
 df = pd.read_csv("airline_delay_data.csv")
 
@@ -18,10 +16,7 @@ print(df.head())
 print(f"\nTotal rows loaded: {len(df)}")
 print(f"Columns: {list(df.columns)}\n")
 
-# -------------------------------------------------------
 # STEP 2: CLEAN THE DATA
-# -------------------------------------------------------
-
 # Strip whitespace from column names (CSVs often have hidden spaces)
 df.columns = df.columns.str.strip()
 
@@ -40,11 +35,8 @@ df = df.dropna(subset=["arr_del15", "arr_flights"])
 
 print(f"Rows after cleaning: {len(df)}\n")
 
-# -------------------------------------------------------
 # STEP 3: ANALYSIS — Question 1
 # Which airlines have the highest delay rate?
-# -------------------------------------------------------
-
 # Group the data by airline, then sum up total flights and delayed flights
 airline_summary = df.groupby("carrier_name").agg(
     total_flights=("arr_flights", "sum"),
@@ -63,11 +55,8 @@ print("=== Question 1: Which airlines have the highest delay rate? ===")
 print(airline_summary[["carrier_name", "total_flights", "delayed_flights", "delay_rate_%"]].to_string(index=False))
 print()
 
-# -------------------------------------------------------
 # STEP 4: ANALYSIS — Question 2
 # What are the most common causes of delays?
-# -------------------------------------------------------
-
 # Sum up each delay cause across all airlines and flights
 delay_causes = {
     "Carrier (Airline)": df["carrier_delay"].sum(),
@@ -84,11 +73,8 @@ for cause, minutes in sorted(delay_causes.items(), key=lambda x: x[1], reverse=T
     print(f"  {cause}: {int(minutes):,} minutes ({pct:.1f}%)")
 print()
 
-# -------------------------------------------------------
 # STEP 5: ANALYSIS — Question 3
 # Which months have the most delays?
-# -------------------------------------------------------
-
 # Group by month and calculate delay rate per month
 monthly = df.groupby("month").agg(
     total_flights=("arr_flights", "sum"),
@@ -112,12 +98,9 @@ print("=== Question 3: Which months have the worst delays? ===")
 print(monthly[["month_name", "total_flights", "delayed_flights", "delay_rate_%"]].to_string(index=False))
 print()
 
-# -------------------------------------------------------
 # STEP 6: EXPORT RESULTS
-# -------------------------------------------------------
-
 # Save the airline summary to a CSV so it can be opened in Excel or Tableau
 airline_summary.to_csv("airline_delay_summary.csv", index=False)
 monthly.to_csv("monthly_delay_summary.csv", index=False)
 
-print("=== Done! Results saved to airline_delay_summary.csv and monthly_delay_summary.csv ===")
+print("=== Results saved to airline_delay_summary.csv and monthly_delay_summary.csv ===")
