@@ -28,7 +28,10 @@ Download the CSV, place it in the same folder as the scripts, and name it: airli
 - Carrier-caused delays accounted for 33% of total delay minutes
 - Weather was responsible for only 6.5% of delays
 
-## How to run
+## Chart
+![Airline Delay Rate](chart_delay_by_airline.png)
+
+## How I ran it 
 1. pip install pandas matplotlib
 2. Place airline_delay_data.csv in the same folder
 3. Run in order:
